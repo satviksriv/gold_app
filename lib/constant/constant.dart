@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-const Color primaryColor = const Color(0xFF4B6AFF);
-const Color whiteColor = Colors.white;
+const Color primaryColor = const Color(0xFF95203D);
+const Color whiteColor = const Color(0xFFFEF8F0);
 const Color blackColor = Colors.black;
 const Color greyColor = const Color(0xFF8F8F8F);
 const Color redColor = const Color(0xFFFF0000);
 const Color orangeColor = const Color(0xFFFFA500);
 const Color greenColor = const Color(0xFF006400);
-const Color scaffoldBgColor = const Color(0xFFF2F4F6);
+const Color scaffoldBgColor = const Color(0xFFFFECCF);
 
 const double fixPadding = 10.0;
 
