@@ -30,7 +30,7 @@ class BuyFailScreen extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: fixPadding * 2.0),
                   child: Text(
-                    'Oops.. Something Went Wrong!',
+                    'Oops...Something Went Wrong!',
                     style: black18SemiBoldTextStyle,
                   ),
                 ),
@@ -66,8 +66,8 @@ class BuyFailScreen extends StatelessWidget {
                 Container(
                   width: width - fixPadding * 4.0,
                   child: Text(
-                    'You order of buy 2.0658 Bitcoin (Btc) at price of \$37,568 has cancelled unfortunately. Try again.',
-                    style: grey14MediumTextStyle,
+                    'Your order of 1.05 GRAM 24KT Gold at price of INR 4,580 has been canceled unfortunately, please try again.',
+                    style: black14BoldTextStyle,
                     textAlign: TextAlign.center,
                   ),
                 ),
