@@ -17,8 +17,8 @@ class _BankDetailsState extends State<BankDetails> {
   void initState() {
     super.initState();
 
-    accountNumberController.text = '1234567890';
-    ifscCodeController.text = 'XYZIN0004569';
+    accountNumberController.text = '630501551161';
+    ifscCodeController.text = 'ICIC0006305';
   }
 
   @override
@@ -29,7 +29,7 @@ class _BankDetailsState extends State<BankDetails> {
         backgroundColor: primaryColor,
         titleSpacing: 0.0,
         title: Text(
-          'Your Bank Details',
+          'YOUR BANK DETAILS',
           style: white16SemiBoldTextStyle,
         ),
         leading: IconButton(
@@ -40,53 +40,51 @@ class _BankDetailsState extends State<BankDetails> {
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: ListView(
-        children: [
-          info(),
-          bankDetail(),
-        ],
-      ),
+      body: bankDetail(),
     );
   }
 
-  info() {
-    return Container(
-      padding: EdgeInsets.all(fixPadding * 2.0),
-      color: greyColor.withOpacity(0.25),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.check_circle,
-            size: 30.0,
-            color: greenColor,
-          ),
-          widthSpace,
-          Expanded(
-            child: Text(
-              'Congratulations! You have successfully added your bank account details.',
-              style: black14RegularTextStyle,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+  // info() {
+  //   return Container(
+  //     padding: EdgeInsets.all(fixPadding * 2.0),
+  //     color: greyColor.withOpacity(0.25),
+  //     child: Row(
+  //       mainAxisAlignment: MainAxisAlignment.start,
+  //       crossAxisAlignment: CrossAxisAlignment.center,
+  //       children: [
+  //         Icon(
+  //           Icons.check_circle,
+  //           size: 30.0,
+  //           color: greenColor,
+  //         ),
+  //         widthSpace,
+  //         Expanded(
+  //           child: Text(
+  //             'Congratulations! You have successfully added your bank account details.',
+  //             style: black14RegularTextStyle,
+  //           ),
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
 
   bankDetail() {
     return Padding(
-      padding: const EdgeInsets.all(fixPadding * 2.0),
+      padding: const EdgeInsets.all(fixPadding * 3.0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        // mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Name Field Start
+          SizedBox(
+            height: 100,
+          ),
           Container(
             padding: EdgeInsets.only(bottom: fixPadding * 2.0),
             child: Theme(
               data: ThemeData(
-                primaryColor: primaryColor,
+                primaryColor: whiteColor,
                 textSelectionTheme: TextSelectionThemeData(
                   cursorColor: primaryColor,
                 ),
@@ -94,15 +92,21 @@ class _BankDetailsState extends State<BankDetails> {
               child: TextField(
                 controller: accountNumberController,
                 keyboardType: TextInputType.number,
-                style: black14MediumTextStyle,
+                style: primaryColor16BoldTextStyle,
                 decoration: InputDecoration(
                   labelText: 'Account Number',
-                  labelStyle: black14MediumTextStyle,
-                  border: OutlineInputBorder(
+                  labelStyle: primaryColor16BoldTextStyle,
+                  enabledBorder: OutlineInputBorder(
                     borderRadius: const BorderRadius.all(
                       const Radius.circular(10.0),
                     ),
-                    borderSide: BorderSide(color: greyColor, width: 0.7),
+                    borderSide: BorderSide(color: primaryColor, width: 1),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: const BorderRadius.all(
+                      const Radius.circular(10.0),
+                    ),
+                    borderSide: BorderSide(color: primaryColor, width: 1),
                   ),
                 ),
                 onChanged: (value) {},
@@ -116,7 +120,7 @@ class _BankDetailsState extends State<BankDetails> {
             padding: EdgeInsets.only(bottom: fixPadding * 2.0),
             child: Theme(
               data: ThemeData(
-                primaryColor: primaryColor,
+                primaryColor: whiteColor,
                 textSelectionTheme: TextSelectionThemeData(
                   cursorColor: primaryColor,
                 ),
@@ -124,15 +128,21 @@ class _BankDetailsState extends State<BankDetails> {
               child: TextField(
                 controller: ifscCodeController,
                 keyboardType: TextInputType.text,
-                style: black14MediumTextStyle,
+                style: primaryColor16BoldTextStyle,
                 decoration: InputDecoration(
                   labelText: 'IFSC Code',
-                  labelStyle: black14MediumTextStyle,
-                  border: OutlineInputBorder(
+                  labelStyle: primaryColor16BoldTextStyle,
+                  enabledBorder: OutlineInputBorder(
                     borderRadius: const BorderRadius.all(
                       const Radius.circular(10.0),
                     ),
-                    borderSide: BorderSide(color: greyColor, width: 0.7),
+                    borderSide: BorderSide(color: primaryColor, width: 1),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: const BorderRadius.all(
+                      const Radius.circular(10.0),
+                    ),
+                    borderSide: BorderSide(color: primaryColor, width: 1),
                   ),
                 ),
                 onChanged: (value) {},
@@ -144,13 +154,14 @@ class _BankDetailsState extends State<BankDetails> {
           // Select Account Type Start
           Text(
             'Select Account Type',
-            style: black16SemiBoldTextStyle,
+            style: primaryColor16BoldTextStyle,
           ),
           heightSpace,
 
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            // mainAxisAlignment: MainAxisAlignment.start,
+            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               selectAccountTypeItem('Savings'),
               selectAccountTypeItem('Current'),
@@ -174,7 +185,7 @@ class _BankDetailsState extends State<BankDetails> {
                 color: primaryColor,
               ),
               child: Text(
-                'Save',
+                'Proceed',
                 style: white14BoldTextStyle,
               ),
             ),
@@ -187,48 +198,51 @@ class _BankDetailsState extends State<BankDetails> {
 
   selectAccountTypeItem(type) {
     double width = MediaQuery.of(context).size.width;
-    return InkWell(
-      onTap: () {
-        setState(() {
-          selectedAccountType = type;
-        });
-      },
-      child: Container(
-        width: (width - fixPadding * 4.0) / 2,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              width: 18.0,
-              height: 18.0,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(9.0),
-                border: Border.all(
-                  width: 0.8,
-                  color:
-                      (selectedAccountType == type) ? primaryColor : greenColor,
-                ),
-              ),
-              child: Container(
-                width: 10.0,
-                height: 10.0,
+    return Expanded(
+      child: InkWell(
+        onTap: () {
+          setState(() {
+            selectedAccountType = type;
+          });
+        },
+        child: Container(
+          width: (width - fixPadding * 4.0) / 2,
+          child: Row(
+            // mainAxisAlignment: MainAxisAlignment.start,
+            // crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                width: 18.0,
+                height: 18.0,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5.0),
-                  color: (selectedAccountType == type)
-                      ? primaryColor
-                      : Colors.transparent,
+                  borderRadius: BorderRadius.circular(9.0),
+                  border: Border.all(
+                    width: 0.8,
+                    color: (selectedAccountType == type)
+                        ? primaryColor
+                        : greenColor,
+                  ),
+                ),
+                child: Container(
+                  width: 10.0,
+                  height: 10.0,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5.0),
+                    color: (selectedAccountType == type)
+                        ? primaryColor
+                        : whiteColor,
+                  ),
                 ),
               ),
-            ),
-            widthSpace,
-            Text(
-              type,
-              style: black14MediumTextStyle,
-            ),
-          ],
+              widthSpace,
+              Text(
+                type,
+                style: primaryColor16BoldTextStyle,
+              ),
+            ],
+          ),
         ),
       ),
     );
