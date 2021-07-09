@@ -18,26 +18,26 @@ class _TotalBalanceState extends State<TotalBalance> {
     {
       'type': 'deposit',
       'status': 'success',
-      'amount': '\$5,000',
-      'dateTime': 'May 10, 2021 9:02:21 PM'
+      'amount': 'INR 4,586.00',
+      'dateTime': 'May 10,2021 9:02:23 PM'
     },
     {
       'type': 'withdraw',
       'status': 'success',
-      'amount': '\$1,000',
-      'dateTime': 'May 2, 2021 2:25:25 PM'
+      'amount': 'INR 488.50',
+      'dateTime': 'April 20,2021 7:02:23 PM'
     },
     {
       'type': 'deposit',
       'status': 'fail',
-      'amount': '\$10,000',
-      'dateTime': 'April 6, 2021 10:35:23 AM'
+      'amount': 'INR 488.50',
+      'dateTime': 'April 10,2021 6:02:24 PM'
     },
     {
       'type': 'deposit',
-      'status': 'fail',
-      'amount': '\$10,000',
-      'dateTime': 'April 6, 2021 10:29:59 AM'
+      'status': 'success',
+      'amount': 'INR 4,396.00',
+      'dateTime': 'March 10,2021 9:02:23 PM'
     }
   ];
 
@@ -155,13 +155,14 @@ class _TotalBalanceState extends State<TotalBalance> {
         leading: IconButton(
           icon: Icon(
             Icons.clear_sharp,
-            color: blackColor,
+            color: primaryColor,
+            size: 35,
           ),
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          'USD',
-          style: black16SemiBoldTextStyle,
+          '24 KT GOLD',
+          style: primaryColor22BoldTextStyle,
         ),
       ),
       bottomNavigationBar: Material(
@@ -188,7 +189,7 @@ class _TotalBalanceState extends State<TotalBalance> {
                   width: (width - 1.0) / 2,
                   alignment: Alignment.center,
                   child: Text(
-                    'Deposit'.toUpperCase(),
+                    'Buy gold'.toUpperCase(),
                     style: white16BoldTextStyle,
                   ),
                 ),
@@ -212,7 +213,7 @@ class _TotalBalanceState extends State<TotalBalance> {
                   width: (width - 1.0) / 2,
                   alignment: Alignment.center,
                   child: Text(
-                    'Withdraw'.toUpperCase(),
+                    'sell/redeem'.toUpperCase(),
                     style: white16BoldTextStyle,
                   ),
                 ),
@@ -223,6 +224,12 @@ class _TotalBalanceState extends State<TotalBalance> {
       ),
       body: ListView(
         children: [
+          SizedBox(
+            height: 25,
+            child: Container(
+              color: whiteColor,
+            ),
+          ),
           balanceData(),
           transaction(),
         ],
@@ -244,11 +251,11 @@ class _TotalBalanceState extends State<TotalBalance> {
           children: [
             Text(
               'Available Balance',
-              style: grey12RegularTextStyle,
+              style: grey14BoldTextStyle,
             ),
             heightSpace,
             Text(
-              '\$152',
+              '15.80 GRAM',
               style: black18BoldTextStyle,
             ),
             height20Space,
@@ -256,19 +263,19 @@ class _TotalBalanceState extends State<TotalBalance> {
               width: width - fixPadding * 4.0,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.0),
-                color: primaryColor.withOpacity(0.065),
+                color: primaryColor,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  depositWithdrawalItem('Total Deposit', '\$3,12,125'),
+                  depositWithdrawalItem('Total Saved', '15.80 GRAM'),
                   Container(
                     height: 34.0,
                     width: 0.7,
-                    color: greyColor.withOpacity(0.6),
+                    color: whiteColor,
                   ),
-                  depositWithdrawalItem('Total Withdawal', '\$78,256'),
+                  depositWithdrawalItem('Bonus Earned', '1.80 GRAM'),
                 ],
               ),
             ),
@@ -290,12 +297,12 @@ class _TotalBalanceState extends State<TotalBalance> {
         children: [
           Text(
             title,
-            style: grey12RegularTextStyle,
+            style: white14MediumTextStyle,
           ),
           height5Space,
           Text(
             value,
-            style: black16SemiBoldTextStyle,
+            style: white16MediumTextStyle,
           ),
         ],
       ),
@@ -353,8 +360,8 @@ class _TotalBalanceState extends State<TotalBalance> {
                           children: [
                             Text(
                               (item['type'] == 'deposit')
-                                  ? 'USD Deposit'
-                                  : 'USD Withdraw',
+                                  ? 'GRAM SAVED' // TODO: this will show in every place
+                                  : 'GRAM RELEASED', // TODO: this will show in every place
                               style: black16MediumTextStyle,
                             ),
                             height5Space,
@@ -379,7 +386,7 @@ class _TotalBalanceState extends State<TotalBalance> {
                 child: Container(
                   height: 1.0,
                   width: double.infinity,
-                  color: greyColor.withOpacity(0.25),
+                  color: primaryColor,
                 ),
               ),
             ],
