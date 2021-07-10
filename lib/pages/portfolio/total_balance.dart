@@ -18,25 +18,25 @@ class _TotalBalanceState extends State<TotalBalance> {
     {
       'type': 'deposit',
       'status': 'success',
-      'amount': 'INR 4,586.00',
+      'amount': 'INR 4,586.00', // TODO: change to gram
       'dateTime': 'May 10,2021 9:02:23 PM'
     },
     {
       'type': 'withdraw',
       'status': 'success',
-      'amount': 'INR 488.50',
+      'amount': 'INR 488.50', // TODO: change to gram
       'dateTime': 'April 20,2021 7:02:23 PM'
     },
     {
       'type': 'deposit',
       'status': 'fail',
-      'amount': 'INR 488.50',
+      'amount': 'INR 488.50', // TODO: change to gram
       'dateTime': 'April 10,2021 6:02:24 PM'
     },
     {
       'type': 'deposit',
       'status': 'success',
-      'amount': 'INR 4,396.00',
+      'amount': 'INR 4,396.00', // TODO: change to gram
       'dateTime': 'March 10,2021 9:02:23 PM'
     }
   ];
@@ -54,6 +54,7 @@ class _TotalBalanceState extends State<TotalBalance> {
           child: Wrap(
             children: [
               Container(
+                color: scaffoldBgColor,
                 padding: EdgeInsets.all(fixPadding * 2.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -66,8 +67,8 @@ class _TotalBalanceState extends State<TotalBalance> {
                         onTap: () => Navigator.pop(context),
                         child: Icon(
                           Icons.close_sharp,
-                          color: blackColor,
-                          size: 20.0,
+                          color: primaryColor,
+                          size: 35.0,
                         ),
                       ),
                     ),
@@ -81,31 +82,33 @@ class _TotalBalanceState extends State<TotalBalance> {
                       ),
                       child: Icon(
                         (status == 'success') ? Icons.done : Icons.close,
-                        size: 26.0,
+                        size: 40.0,
                         color: whiteColor,
                       ),
                     ),
-                    height20Space,
+                    SizedBox(
+                      height: 10,
+                    ),
                     Text(
-                      amount,
-                      style: black18MediumTextStyle,
+                      amount, // TODO: Change to GRAM
+                      style: black18BoldTextStyle,
                     ),
                     height5Space,
                     Text(
                       (status == 'success')
                           ? 'Success'.toUpperCase()
                           : 'Fail'.toUpperCase(),
-                      style: primaryColor14MediumTextStyle,
+                      style: black16BoldTextStyle,
                     ),
                     height5Space,
                     Text(
                       dateTime,
-                      style: grey12RegularTextStyle,
+                      style: grey12BoldTextStyle,
                     ),
                     height20Space,
                     InkWell(
                       onTap: () {
-                        FlutterClipboard.copy('ufx3fghty89jhd').then((value) {
+                        FlutterClipboard.copy('UQDKDRX879J').then((value) {
                           Fluttertoast.showToast(
                             msg: 'Copied to clipboard',
                             backgroundColor: Colors.black,
@@ -118,18 +121,20 @@ class _TotalBalanceState extends State<TotalBalance> {
                         width: double.infinity,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.0),
-                          color: greyColor.withOpacity(0.15),
+                          color: whiteColor,
                         ),
-                        child: Text(
-                          'ufx3fghty89jhd',
-                          style: grey14MediumTextStyle,
+                        child: Center(
+                          child: Text(
+                            'UQDKDRX879J',
+                            style: grey14BoldTextStyle,
+                          ),
                         ),
                       ),
                     ),
                     SizedBox(height: 3.0),
                     Text(
                       'Tap to copy Reference ID',
-                      style: grey12RegularTextStyle,
+                      style: grey12BoldTextStyle,
                     ),
                   ],
                 ),
@@ -297,12 +302,12 @@ class _TotalBalanceState extends State<TotalBalance> {
         children: [
           Text(
             title,
-            style: white14MediumTextStyle,
+            style: white14BoldTextStyle,
           ),
           height5Space,
           Text(
             value,
-            style: white16MediumTextStyle,
+            style: white18BoldTextStyle,
           ),
         ],
       ),
@@ -359,15 +364,19 @@ class _TotalBalanceState extends State<TotalBalance> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              (item['type'] == 'deposit')
-                                  ? 'GRAM SAVED' // TODO: this will show in every place
-                                  : 'GRAM RELEASED', // TODO: this will show in every place
-                              style: black16MediumTextStyle,
+                              (item['type'] == 'deposit' &&
+                                      item['status'] == 'success')
+                                  ? 'GRAM SAVED' // TODO: amount not shown
+                                  : (item['type'] == 'deposit' &&
+                                          item['status'] == 'fail')
+                                      ? 'GRAM ON HOLD' // TODO: amount not shown
+                                      : "GRAM RELEASED", // TODO: amount not shown
+                              style: black16SemiBoldTextStyle,
                             ),
                             height5Space,
                             Text(
                               item['dateTime'],
-                              style: grey12RegularTextStyle,
+                              style: grey12BoldTextStyle,
                             ),
                           ],
                         ),
