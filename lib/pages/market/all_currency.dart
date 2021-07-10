@@ -3,15 +3,15 @@ import 'package:cryptox/pages/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
-class AllCurrency extends StatefulWidget {
-  const AllCurrency({Key key}) : super(key: key);
+class All extends StatefulWidget {
+  const All({Key key}) : super(key: key);
 
   @override
-  _AllCurrencyState createState() => _AllCurrencyState();
+  _AllState createState() => _AllState();
 }
 
-class _AllCurrencyState extends State<AllCurrency> {
-  final allCurrencyList = [
+class _AllState extends State<All> {
+  final allList = [
     {
       'name': 'Bitcoin',
       'shortName': 'BTC',
@@ -88,12 +88,12 @@ class _AllCurrencyState extends State<AllCurrency> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: allCurrencyList.length,
+      itemCount: allList.length,
       physics: BouncingScrollPhysics(),
       itemBuilder: (context, index) {
-        final item = allCurrencyList[index];
+        final item = allList[index];
         return Padding(
-          padding: (index != allCurrencyList.length - 1)
+          padding: (index != allList.length - 1)
               ? EdgeInsets.fromLTRB(
                   fixPadding * 2.0, fixPadding * 2.0, fixPadding * 2.0, 0.0)
               : EdgeInsets.all(fixPadding * 2.0),

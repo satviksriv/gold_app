@@ -56,6 +56,7 @@ flutter:
     - assets/icon/grey/
     - assets/user/
     - assets/crypto_icon/
+    - assets/crypto_icon/gold_ingots.png
 
   fonts:
     - family: Montserrat
