@@ -12,7 +12,7 @@ export 'buySccessFailScreen/buy_fail_screen.dart';
 export 'portfolio/portfolio.dart';
 export 'portfolio/total_balance.dart';
 export 'portfolio/deposit.dart';
-export 'portfolio/withdraw.dart';
+export 'portfolio/sell_redeem.dart';
 export 'profile/profile.dart';
 export 'profile/edit_profile.dart';
 export 'profile/support.dart';

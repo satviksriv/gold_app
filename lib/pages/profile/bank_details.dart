@@ -73,13 +73,11 @@ class _BankDetailsState extends State<BankDetails> {
     return Padding(
       padding: const EdgeInsets.all(fixPadding * 3.0),
       child: Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Name Field Start
-          SizedBox(
-            height: 100,
-          ),
+
           Container(
             padding: EdgeInsets.only(bottom: fixPadding * 2.0),
             child: Theme(
