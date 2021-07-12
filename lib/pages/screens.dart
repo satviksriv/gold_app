@@ -1,5 +1,6 @@
 export 'bottom_bar.dart';
 export 'home/home.dart';
+export 'home/guest_home.dart';
 export 'market/market.dart';
 export 'market/all_currency.dart';
 export 'market/forfieted.dart';
