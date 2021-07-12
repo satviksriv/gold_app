@@ -5,6 +5,7 @@ export 'market/all_currency.dart';
 export 'market/forfieted.dart';
 export 'market/completed.dart';
 export 'market/running.dart';
+export 'market/plans.dart';
 export 'currencyScreen/currency_screen.dart';
 export 'currencyScreen/crypto_chart_syncfusion.dart';
 export 'buySccessFailScreen/buy_success_screen.dart';
