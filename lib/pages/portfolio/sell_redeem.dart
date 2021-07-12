@@ -242,62 +242,101 @@ class _WithdrawState extends State<Withdraw> {
           // ),
 
           SizedBox(height: fixPadding * 3.0),
-
-          // Withdraw Button Start
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: fixPadding * 2.0),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Material(
-                elevation: 2.0,
-                borderRadius: BorderRadius.circular(5.0),
-                child: InkWell(
-                  onTap: () => Navigator.pop(context),
-                  borderRadius: BorderRadius.circular(5.0),
-                  child: Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.all(fixPadding * 0.7),
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5.0),
-                      color: primaryColor,
+            padding: const EdgeInsets.symmetric(horizontal: 40),
+            child: InkWell(
+              child: Container(
+                decoration: BoxDecoration(
+                    color: primaryColor,
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                height: 55,
+
+                // padding: EdgeInsets.only(bottom: fixPadding * 2.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      'sell gold'.toUpperCase(),
+                      style: TextStyle(
+                        color: scaffoldBgColor,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          'sell gold'.toUpperCase(),
-                          style: TextStyle(
-                            color: scaffoldBgColor,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Container(
-                          height: 30.0,
-                          width: 1.0,
-                          color: whiteColor,
-                        ),
-                        Text(
-                          'redeem gold'.toUpperCase(),
-                          style: TextStyle(
-                            color: scaffoldBgColor,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
+                    Container(
+                      height: 30.0,
+                      width: 1.0,
+                      color: whiteColor,
                     ),
-                  ),
+                    Text(
+                      'redeem gold'.toUpperCase(),
+                      style: TextStyle(
+                        color: scaffoldBgColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
           ),
+
+          // Withdraw Button Start
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: fixPadding * 2.0),
+          //   child: Padding(
+          //     padding: EdgeInsets.symmetric(horizontal: 20),
+          //     child: Material(
+          //       elevation: 2.0,
+          //       borderRadius: BorderRadius.circular(5.0),
+          //       child: InkWell(
+          //         onTap: () => Navigator.pop(context),
+          //         borderRadius: BorderRadius.circular(5.0),
+          //         child: Container(
+          //           width: double.infinity,
+          //           padding: EdgeInsets.all(fixPadding * 0.7),
+          //           alignment: Alignment.center,
+          //           decoration: BoxDecoration(
+          //             borderRadius: BorderRadius.circular(5.0),
+          //             color: primaryColor,
+          //           ),
+          //           child: Row(
+          //             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //             children: [
+          //               Text(
+          //                 'sell gold'.toUpperCase(),
+          //                 style: TextStyle(
+          //                   color: scaffoldBgColor,
+          //                   fontWeight: FontWeight.bold,
+          //                 ),
+          //               ),
+          //               Container(
+          //                 height: 30.0,
+          //                 width: 1.0,
+          //                 color: whiteColor,
+          //               ),
+          //               Text(
+          //                 'redeem gold'.toUpperCase(),
+          //                 style: TextStyle(
+          //                   color: scaffoldBgColor,
+          //                   fontWeight: FontWeight.bold,
+          //                 ),
+          //               ),
+          //             ],
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
           // Withdraw Button End
           height5Space,
           Text(
             'You have 0:43 Minutes',
             style: black14SemiBoldTextStyle,
           ),
-          SizedBox(height: 50,),
+          SizedBox(
+            height: 50,
+          ),
           Text(
             "You can also prefer to partly sell or redeem by\n             entering your preferred weight",
             style: black14SemiBoldTextStyle,
