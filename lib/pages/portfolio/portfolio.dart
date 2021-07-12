@@ -152,7 +152,11 @@ class _PortfolioState extends State<Portfolio> {
     );
   }
 
-  currentBalance(String mainText, String amount, String bottomText,) {
+  currentBalance(
+    String mainText,
+    String amount,
+    String bottomText,
+  ) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(
           fixPadding * 2.0, fixPadding * 2.0, fixPadding * 2.0, 0),
@@ -209,7 +213,8 @@ class _PortfolioState extends State<Portfolio> {
                             color: scaffoldBgColor,
                           ),
                           child: Icon(
-                            Icons.home, // TODO; claendar icon / snow icon / share icon / bank icon
+                            Icons
+                                .home, // TODO; claendar icon / snow icon / share icon / bank icon
                             color: primaryColor,
                             size: 30,
                           ),
