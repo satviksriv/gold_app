@@ -177,7 +177,7 @@ class _GuestHomeState extends State<GuestHome> {
             physics: BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              final item = howToVideo[index];
+              // final item = howToVideo[index];
 
               return Padding(
                 padding: (index != howToVideo.length - 1)
