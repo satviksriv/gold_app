@@ -4,6 +4,7 @@ import 'package:cryptox/pages/screens.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/scheduler.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Portfolio extends StatefulWidget {
   const Portfolio({Key key}) : super(key: key);
@@ -51,13 +52,18 @@ class _PortfolioState extends State<Portfolio> {
       body: ListView(
         children: [
           portfolioValue(),
+          currentBalance('Total Gold Saved In Plans', '10.60 GRAM',
+              'check plans', FontAwesomeIcons.calendarCheck),
           currentBalance(
-              'Total Gold Saved In Plans', '10.60 GRAM', 'check plans'),
-          currentBalance(
-              'Total Instant Gold Available', '5.20 GRAM', 'sell gold'),
-          currentBalance(
-              'Total Referral Bonus', '1.58 GRAM', 'refer to friend'),
-          currentBalance('Total Plan Bonus', '1.80 GRAM', 'enrol new plan'),
+            'Total Instant Gold Available',
+            '5.20 GRAM',
+            'sell gold',
+            FontAwesomeIcons.calendarCheck,
+          ), //TODO: change the icon
+          currentBalance('Total Referral Bonus', '1.58 GRAM', 'refer to friend',
+              FontAwesomeIcons.calendarCheck), //TODO: change the icon
+          currentBalance('Total Plan Bonus', '1.80 GRAM', 'enrol new plan',
+              FontAwesomeIcons.calendarCheck), //TODO: change the icon
           // myPortfolioItems(),
         ],
       ),
@@ -156,6 +162,7 @@ class _PortfolioState extends State<Portfolio> {
     String mainText,
     String amount,
     String bottomText,
+    IconData icons,
   ) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(
@@ -213,8 +220,7 @@ class _PortfolioState extends State<Portfolio> {
                             color: scaffoldBgColor,
                           ),
                           child: Icon(
-                            Icons
-                                .home, // TODO; claendar icon / snow icon / share icon / bank icon
+                            icons, // TODO; claendar icon / snow icon / share icon / bank icon
                             color: primaryColor,
                             size: 30,
                           ),

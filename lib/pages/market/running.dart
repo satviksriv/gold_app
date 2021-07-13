@@ -12,11 +12,11 @@ class Running extends StatefulWidget {
 }
 
 class _RunningState extends State<Running> {
-  final RunningItem = [
+  final runningItem = [
     {
       'name': 'Total Saved Gold In This Plan',
       'amount': '15.80 GRAM',
-      'image': 'assets/crypto_icon/eth.png', // TODO: Image asset to be changed
+      'image': 'assets/crypto_icon/gold_ingots.png',
       'value': '\$185.65',
       'status': 'up',
       'change': '6.86%'
@@ -24,7 +24,7 @@ class _RunningState extends State<Running> {
     {
       'name': 'Total Saved Gold In This Plan',
       'amount': '13.10 GRAM',
-      'image': 'assets/crypto_icon/xrp.png', // TODO: Image asset to be changed
+      'image': 'assets/crypto_icon/gold_ingots.png',
       'value': '\$0.262855',
       'status': 'down',
       'change': '8.95%'
@@ -32,7 +32,7 @@ class _RunningState extends State<Running> {
     {
       'name': 'Total Saved Gold In This Plan',
       'amount': '10.20 GRAM',
-      'image': 'assets/crypto_icon/bch.png', // TODO: Image asset to be changed
+      'image': 'assets/crypto_icon/gold_ingots.png',
       'value': '\$297.98',
       'status': 'up',
       'change': '4.55%'
@@ -40,7 +40,7 @@ class _RunningState extends State<Running> {
   ];
   @override
   Widget build(BuildContext context) {
-    return (RunningItem.isEmpty)
+    return (runningItem.isEmpty)
         ? Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -62,18 +62,18 @@ class _RunningState extends State<Running> {
               heightSpace,
               heightSpace,
               Text(
-                'There are no plans running at this moment!', // TODO: statement when the page is empty
+                'There are no plans running at this moment!',
                 style: grey20BoldTextStyle,
               ),
             ],
           )
         : ListView.builder(
-            itemCount: RunningItem.length,
+            itemCount: runningItem.length,
             physics: BouncingScrollPhysics(),
             itemBuilder: (context, index) {
-              final item = RunningItem[index];
+              final item = runningItem[index];
               return Padding(
-                padding: (index != RunningItem.length - 1)
+                padding: (index != runningItem.length - 1)
                     ? EdgeInsets.fromLTRB(fixPadding * 2.0, fixPadding * 2.0,
                         fixPadding * 2.0, 0.0)
                     : EdgeInsets.all(fixPadding * 2.0),
@@ -106,13 +106,11 @@ class _RunningState extends State<Running> {
                             child: Row(
                               children: [
                                 widthSpace,
-                                Flexible(
-                                  child: Image.asset(
-                                    item['image'],
-                                    height: 50,
-                                    width: 50,
-                                    fit: BoxFit.cover,
-                                  ),
+                                Image.asset(
+                                  item['image'],
+                                  height: 44,
+                                  width: 44,
+                                  fit: BoxFit.cover,
                                 ),
                                 widthSpace,
                                 Column(
