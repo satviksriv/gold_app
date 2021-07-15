@@ -34,7 +34,7 @@ class _RegisterState extends State<Register> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/auth-icon.png',
+                'assets/Logo.png',
                 width: 150.0,
                 height: 150.0,
                 fit: BoxFit.cover,
@@ -70,7 +70,7 @@ class _RegisterState extends State<Register> {
                     ),
                   ),
                 ),
-              ),
+              ), //username
               height20Space,
               Padding(
                 padding: EdgeInsets.only(right: 20.0, left: 20.0),
@@ -97,7 +97,7 @@ class _RegisterState extends State<Register> {
                     ),
                   ),
                 ),
-              ),
+              ), //Email
               height20Space,
               Padding(
                 padding: EdgeInsets.only(right: 20.0, left: 20.0),
@@ -119,13 +119,13 @@ class _RegisterState extends State<Register> {
                     obscureText: true,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.only(left: 20.0),
-                      hintText: 'Password',
+                      hintText: 'DOB',
                       hintStyle: black14MediumTextStyle,
                       border: InputBorder.none,
                     ),
                   ),
                 ),
-              ),
+              ), //Password
               height20Space,
               Padding(
                 padding: EdgeInsets.only(right: 20.0, left: 20.0),
@@ -147,14 +147,44 @@ class _RegisterState extends State<Register> {
                     obscureText: true,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.only(left: 20.0),
-                      hintText: 'Confirm Password',
+                      hintText: 'PAN Card(Optional)',
                       hintStyle: black14MediumTextStyle,
                       border: InputBorder.none,
                     ),
                   ),
                 ),
-              ),
+              ), //PAN Card
               height20Space,
+              Padding(
+                padding: EdgeInsets.only(right: 20.0, left: 20.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: whiteColor,
+                    borderRadius: BorderRadius.circular(10.0),
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 4.0,
+                        spreadRadius: 1.0,
+                        color: blackColor.withOpacity(0.05),
+                      ),
+                    ],
+                  ),
+                  child: TextField(
+                    style: black14MediumTextStyle,
+                    keyboardType: TextInputType.text,
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      contentPadding: EdgeInsets.only(left: 20.0),
+                      hintText: 'REFERAL ID(Optional)',
+                      hintStyle: black14MediumTextStyle,
+                      border: InputBorder.none,
+                    ),
+                  ),
+                ),
+              ), //Referal ID
+              SizedBox(
+                height: 50,
+              ),
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: fixPadding * 2.0),
@@ -183,8 +213,7 @@ class _RegisterState extends State<Register> {
                     ),
                   ),
                 ),
-              ),
-              height20Space,
+              ), //Continue
             ],
           ),
         ],
