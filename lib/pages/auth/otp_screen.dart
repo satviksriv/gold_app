@@ -90,7 +90,7 @@ class _OTPScreenState extends State<OTPScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/auth-icon.png',
+                'assets/Logo.png',
                 width: 150.0,
                 height: 150.0,
                 fit: BoxFit.cover,
@@ -253,11 +253,11 @@ class _OTPScreenState extends State<OTPScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: fixPadding * 2.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      'Didn\'t receive OTP Code!',
+                      'Didn\'t receive OTP Code?',
                       style: grey14MediumTextStyle,
                     ),
                     width5Space,
