@@ -17,71 +17,39 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    // Timer(
-    //     Duration(seconds: 500),
-    //     () => Navigator.push(
-    //         context, MaterialPageRoute(builder: (context) => Login())));
+    Timer(
+        Duration(seconds: 3),
+        () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Login())));
   }
 
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-
-    //Your work starts here****************************************
-
     return Scaffold(
-      backgroundColor: scaffoldBgColor,
+      backgroundColor: primaryColor,
       body: Container(
         width: width,
         height: height,
         child: Stack(
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                SizedBox(
-                  width: double.infinity,
-                ),
-                SizedBox(
-                  height: 150,
-                ),
-                Image.asset(
-                  'assets/Logo.png',
-                  width: 150.0,
-                  height: 150.0,
-                  fit: BoxFit.cover,
-                ),
-                Text(
-                  'BKS MyGold',
-                ),
-                SizedBox(
-                  width: 40,
-                  child: Divider(
-                    thickness: 3,
-                  ),
-                ),
-                Text(
-                  'BUY TODAY',
-                ),
-                Text(
-                  'SAVE FOR TOMMOWROW',
-                ),
-                Text(
-                  'A VENTURE OF',
-                ),
-                Text(
-                  'B.K.SARAF PVT JEWELLERS',
-                ),
-              ],
+            Container(
+              width: width,
+              height: height,
+              alignment: Alignment.center,
+              child: Text(
+                'CryptoX',
+                style: white44BoldTextStyle,
+              ),
             ),
             Positioned(
               bottom: 30.0,
               child: Container(
                 width: width,
                 child: SpinKitRing(
-                  color: primaryColor,
-                  size: 15,
+                  color: whiteColor,
+                  size: 50.0,
                   lineWidth: 1.5,
                 ),
               ),
@@ -92,5 +60,3 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 }
-
-//Your work ends here****************************************
