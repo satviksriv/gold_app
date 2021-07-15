@@ -3,21 +3,21 @@ import 'package:cryptox/pages/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
-class TopGainer extends StatefulWidget {
-  const TopGainer({Key key}) : super(key: key);
+class Completed extends StatefulWidget {
+  const Completed({Key key}) : super(key: key);
 
   @override
-  _TopGainerState createState() => _TopGainerState();
+  _CompletedState createState() => _CompletedState();
 }
 
-class _TopGainerState extends State<TopGainer> {
-  final topGainerList = [
+class _CompletedState extends State<Completed> {
+  final CompletedList = [
     {
       'name': 'XRP',
       'shortName': 'XRP',
       'image': 'assets/crypto_icon/xrp.png',
       'value': '\$0.262855',
-      'status': 'up',
+      'status': 'down',
       'change': '8.95%'
     },
     {
@@ -25,7 +25,7 @@ class _TopGainerState extends State<TopGainer> {
       'shortName': 'LTC',
       'image': 'assets/crypto_icon/ltc.png',
       'value': '\$71.24',
-      'status': 'up',
+      'status': 'down',
       'change': '7.12%'
     },
     {
@@ -33,7 +33,7 @@ class _TopGainerState extends State<TopGainer> {
       'shortName': 'BTC',
       'image': 'assets/crypto_icon/btc.png',
       'value': '\$10,136.73',
-      'status': 'up',
+      'status': 'down',
       'change': '6.72%'
     },
     {
@@ -41,7 +41,7 @@ class _TopGainerState extends State<TopGainer> {
       'shortName': 'ETH',
       'image': 'assets/crypto_icon/eth.png',
       'value': '\$185.65',
-      'status': 'up',
+      'status': 'down',
       'change': '6.23%'
     },
     {
@@ -49,7 +49,7 @@ class _TopGainerState extends State<TopGainer> {
       'shortName': 'BCH',
       'image': 'assets/crypto_icon/bch.png',
       'value': '\$297.98',
-      'status': 'up',
+      'status': 'down',
       'change': '4.55%'
     },
     {
@@ -57,7 +57,7 @@ class _TopGainerState extends State<TopGainer> {
       'shortName': 'BNB',
       'image': 'assets/crypto_icon/bnb.png',
       'value': '\$27.11',
-      'status': 'up',
+      'status': 'down',
       'change': '3.43%'
     },
     {
@@ -65,7 +65,7 @@ class _TopGainerState extends State<TopGainer> {
       'shortName': 'EOS',
       'image': 'assets/crypto_icon/eos.png',
       'value': '\$3.44',
-      'status': 'up',
+      'status': 'down',
       'change': '3.12%'
     },
     {
@@ -73,7 +73,7 @@ class _TopGainerState extends State<TopGainer> {
       'shortName': 'XMR',
       'image': 'assets/crypto_icon/xmr.png',
       'value': '\$1.54',
-      'status': 'up',
+      'status': 'down',
       'change': '2.75%'
     },
     {
@@ -81,19 +81,19 @@ class _TopGainerState extends State<TopGainer> {
       'shortName': 'USDT',
       'image': 'assets/crypto_icon/usdt.png',
       'value': '\$1.23',
-      'status': 'up',
+      'status': 'down',
       'change': '1.58%'
     }
   ];
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: topGainerList.length,
+      itemCount: CompletedList.length,
       physics: BouncingScrollPhysics(),
       itemBuilder: (context, index) {
-        final item = topGainerList[index];
+        final item = CompletedList[index];
         return Padding(
-          padding: (index != topGainerList.length - 1)
+          padding: (index != CompletedList.length - 1)
               ? EdgeInsets.fromLTRB(
                   fixPadding * 2.0, fixPadding * 2.0, fixPadding * 2.0, 0.0)
               : EdgeInsets.all(fixPadding * 2.0),

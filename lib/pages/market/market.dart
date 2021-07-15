@@ -20,7 +20,7 @@ class _MarketState extends State<Market> {
           backgroundColor: whiteColor,
           automaticallyImplyLeading: false,
           title: Text(
-            'Market is up 3.86% today',
+            'Market is up 2.06% today',
             style: TextStyle(
               fontSize: 16.0,
               color: greenColor,
@@ -40,18 +40,18 @@ class _MarketState extends State<Market> {
             isScrollable: true,
             tabs: [
               Tab(text: 'All'),
-              Tab(text: 'Watchlist'),
-              Tab(text: 'Top Gainers'),
-              Tab(text: 'Top Losers'),
+              Tab(text: 'Running'),
+              Tab(text: 'Forfieted'),
+              Tab(text: 'Completed'),
             ],
           ),
         ),
         body: TabBarView(
           children: [
-            AllCurrency(),
-            WatchList(),
-            TopGainer(),
-            TopLoser(),
+            All(),
+            Running(),
+            Forfieted(),
+            Completed(),
           ],
         ),
       ),
