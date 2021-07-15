@@ -27,7 +27,30 @@ class _LoginState extends State<Login> {
     });
   }
 
+  bool value = true;
+
   @override
+  Widget buildCheckbox() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Checkbox(
+          activeColor: primaryColor,
+          value: value,
+          onChanged: (value) {
+            setState(() {
+              this.value = value;
+            });
+          },
+        ),
+        Text(
+          'Click here to recieve Whatsapp Notifications',
+          style: black14RegularTextStyle,
+        ),
+      ],
+    );
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: scaffoldBgColor,
@@ -40,7 +63,7 @@ class _LoginState extends State<Login> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/auth-icon.png',
+                  'assets/Logo.png',
                   width: 150.0,
                   height: 150.0,
                   fit: BoxFit.cover,
@@ -51,7 +74,12 @@ class _LoginState extends State<Login> {
                   style: grey14BoldTextStyle,
                 ),
                 Padding(
-                  padding: EdgeInsets.all(20.0),
+                  padding: EdgeInsets.fromLTRB(
+                    fixPadding * 3.0,
+                    20,
+                    fixPadding * 3.0,
+                    15,
+                  ),
                   child: Container(
                     padding: EdgeInsets.only(left: fixPadding * 2.0),
                     decoration: BoxDecoration(
@@ -75,17 +103,18 @@ class _LoginState extends State<Login> {
                       inputDecoration: InputDecoration(
                         contentPadding: EdgeInsets.only(left: 0.0),
                         hintText: 'Phone Number',
-                        hintStyle: black14RegularTextStyle,
+                        hintStyle: black16SemiBoldTextStyle,
                         border: InputBorder.none,
                       ),
                       selectorType: PhoneInputSelectorType.DIALOG,
                     ),
                   ),
                 ),
+                buildCheckbox(),
                 heightSpace,
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: fixPadding * 2.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: fixPadding * 3.0, vertical: 15.0),
                   child: InkWell(
                     onTap: () {
                       Navigator.push(
@@ -107,80 +136,24 @@ class _LoginState extends State<Login> {
                       ),
                       child: Text(
                         'Continue',
-                        style: white14BoldTextStyle,
+                        style: white18BoldTextStyle,
                       ),
                     ),
                   ),
                 ),
-                heightSpace,
+                height20Space,
                 Text(
                   'We’ll send otp for verification',
                   style: black14MediumTextStyle,
                 ),
                 height20Space,
-                height20Space,
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: fixPadding * 2.0),
-                  child: Container(
-                    width: double.infinity,
-                    height: 56.0,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: Color(0xFF3B5998),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/facebook.png',
-                          width: 37.0,
-                          height: 37.0,
-                          fit: BoxFit.cover,
-                        ),
-                        width20Space,
-                        Text(
-                          'Log in with Facebook',
-                          style: white14MediumTextStyle,
-                        ),
-                      ],
-                    ),
-                  ),
+                SizedBox(
+                  height: 200,
                 ),
-                height20Space,
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: fixPadding * 2.0),
-                  child: Container(
-                    width: double.infinity,
-                    height: 56.0,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      color: whiteColor,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/google.png',
-                          width: 37.0,
-                          height: 37.0,
-                          fit: BoxFit.cover,
-                        ),
-                        width20Space,
-                        Text(
-                          'Log in with Google',
-                          style: black14MediumTextStyle,
-                        ),
-                      ],
-                    ),
-                  ),
+                Text(
+                  'Guest Login',
+                  style: red16BoldTextStyle,
                 ),
-                height20Space,
               ],
             ),
           ],
