@@ -32,8 +32,6 @@ dependencies:
   intl_phone_number_input: ^0.4.6+2
   page_transition: ^1.1.7+6
   syncfusion_flutter_charts: ^18.4.34
-  clipboard: ^0.1.3
-  font_awesome_flutter: ^9.1.0
 
 dev_dependencies:
   flutter_test:
