@@ -205,14 +205,15 @@ class _TotalBalanceState extends State<TotalBalance> {
                 color: whiteColor.withOpacity(0.5),
               ),
               InkWell(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      PageTransition(
-                          type: PageTransitionType.size,
-                          alignment: Alignment.bottomCenter,
-                          child: Withdraw()));
-                },
+                onTap: () => lossOfGold(),
+                // {
+                //   Navigator.push(
+                //       context,
+                //       PageTransition(
+                //           type: PageTransitionType.size,
+                //           alignment: Alignment.bottomCenter,
+                //           child: Withdraw()));
+                // },
                 child: Container(
                   height: 50.0,
                   width: (width - 1.0) / 2,
@@ -396,6 +397,208 @@ class _TotalBalanceState extends State<TotalBalance> {
                   height: 1.0,
                   width: double.infinity,
                   color: primaryColor,
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  lossOfGold() {
+    // double width = MediaQuery.of(context).size.width;
+    showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return Dialog(
+          elevation: 0.0,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+          child: Wrap(
+            children: [
+              Container(
+                color: scaffoldBgColor,
+                padding: EdgeInsets.all(fixPadding * 2.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      width: double.infinity,
+                      alignment: Alignment.topRight,
+                      child: InkWell(
+                        onTap: () => Navigator.pop(context),
+                        child: Icon(
+                          Icons.close_sharp,
+                          color: primaryColor,
+                          size: 35.0,
+                        ),
+                      ),
+                    ),
+                    Icon(
+                      Icons.warning,
+                      size: 50.0,
+                      color: redColor,
+                    ),
+                    SizedBox(
+                      height: 13,
+                    ),
+                    Text(
+                      "3.80 GRAM", // TODO: Change to GRAM
+                      style: black22BoldTextStyle,
+                    ),
+                    // heightSpace,
+                    // SizedBox(height: 5),
+                    Text(
+                      "loss of gold".toUpperCase(),
+                      style: black16BoldTextStyle,
+                    ),
+                    SizedBox(height: 13),
+                    Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          color: primaryColor,
+                          borderRadius: BorderRadius.all(Radius.circular(10))),
+                      child: Row(
+                        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        // crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          // depositWithdrawalItem('Total Saved', '15.80 GRAM'),
+                          Padding(
+                            padding: const EdgeInsets.all(17),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              // crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "BONUS LOSS",
+                                  style: TextStyle(
+                                    fontFamily: 'Jost',
+                                    fontSize: 14.0,
+                                    color: scaffoldBgColor,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                height5Space,
+                                Text(
+                                  "1.80 GRAM",
+                                  style: TextStyle(
+                                    fontFamily: 'Jost',
+                                    fontSize: 18.0,
+                                    color: scaffoldBgColor,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            height: 60.0,
+                            width: 0.7,
+                            color: whiteColor,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            // crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                "HANDLING CHARGES",
+                                style: TextStyle(
+                                  fontFamily: 'Jost',
+                                  fontSize: 14.0,
+                                  color: scaffoldBgColor,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              height5Space,
+                              Text(
+                                "2.00 GRAM",
+                                style: TextStyle(
+                                  fontFamily: 'Jost',
+                                  fontSize: 18.0,
+                                  color: scaffoldBgColor,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                          // depositWithdrawalItem('Bonus Earned', '1.80 GRAM'),
+                        ],
+                      ),
+                    ),
+                    // Text(
+                    //   dateTime,
+                    //   style: grey12BoldTextStyle,
+                    // ),
+                    // height20Space,
+                    // InkWell(
+                    //   onTap: () {
+                    //     FlutterClipboard.copy('UQDKDRX879J').then((value) {
+                    //       Fluttertoast.showToast(
+                    //         msg: 'Copied to clipboard',
+                    //         backgroundColor: Colors.black,
+                    //         textColor: whiteColor,
+                    //       );
+                    //     });
+                    //   },
+                    //   child: Container(
+                    //     padding: EdgeInsets.all(fixPadding),
+                    //     width: double.infinity,
+                    //     decoration: BoxDecoration(
+                    //       borderRadius: BorderRadius.circular(10.0),
+                    //       color: whiteColor,
+                    //     ),
+                    //     child: Center(
+                    //       child: Text(
+                    //         'UQDKDRX879J',
+                    //         style: grey14BoldTextStyle,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                    SizedBox(height: 13.0),
+                    Text(
+                      'Still wish to proceed?',
+                      style: grey14BoldTextStyle,
+                    ),
+                    SizedBox(height: 13.0),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  type: PageTransitionType.size,
+                                  alignment: Alignment.bottomCenter,
+                                  child: Withdraw()));
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 45,
+                          decoration: BoxDecoration(
+                              color: primaryColor,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
+                          child: Center(
+                            child: Text(
+                              "PROCEED TO SELL/REDEEM",
+                              style: TextStyle(
+                                fontFamily: 'Jost',
+                                fontSize: 14.0,
+                                color: scaffoldBgColor,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
               ),
             ],
