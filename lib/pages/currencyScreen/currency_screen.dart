@@ -384,7 +384,7 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                   Container(
                     padding: EdgeInsets.all(fixPadding * 2.0),
                     decoration: BoxDecoration(
-                      color: whiteColor,
+                      color: scaffoldBgColor,
                       borderRadius:
                           BorderRadius.vertical(top: Radius.circular(10.0)),
                     ),
@@ -398,13 +398,15 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                           child: Text(
                             'BUY 24 KT GOLD BY VALUE',
                             style: black18BoldTextStyle,
+                            'Buy 24 KT GOLD By Value',
+                            style: primaryColor18BoldTextStyle,
                           ),
                         ),
                         height20Space,
                         Container(
                           width: double.infinity,
-                          height: 0.7,
-                          color: greyColor.withOpacity(0.4),
+                          height: 0.9,
+                          color: primaryColor,
                         ),
 
                         Padding(
@@ -419,14 +421,15 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                                 width: 56.0,
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
+                                  color: whiteColor,
                                   borderRadius: BorderRadius.circular(7.0),
-                                  border: Border.all(
-                                    width: 0.8,
-                                    color: greyColor.withOpacity(0.5),
-                                  ),
+                                  // border: Border.all(
+                                  //   width: 0.8,
+                                  //   color: greyColor.withOpacity(0.5),
+                                  // ),
                                 ),
                                 child: Image.asset(
-                                  'assets/crypto_icon/btc.png',
+                                  'assets/crypto_icon/gold_ingots.png',
                                   width: 36.0,
                                   height: 36.0,
                                   fit: BoxFit.cover,
@@ -438,8 +441,8 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Current BTC Buy Price',
-                                    style: black14RegularTextStyle,
+                                    'Current 24 KT GOLD Buy Price',
+                                    style: grey14BoldTextStyle,
                                   ),
                                   height5Space,
                                   Row(
@@ -448,18 +451,18 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Text(
-                                        '\$39,914',
+                                        'INR 4,714.40',
                                         style: black18SemiBoldTextStyle,
                                       ),
                                       widthSpace,
-                                      Icon(
-                                        Icons.arrow_drop_up,
-                                        size: 26.0,
-                                        color: primaryColor,
-                                      ),
+                                      // Icon(
+                                      //   Icons.arrow_drop_up,
+                                      //   size: 26.0,
+                                      //   color: primaryColor,
+                                      // ),
                                       Text(
-                                        '4.65%',
-                                        style: primaryColor16MediumTextStyle,
+                                        '(GST 3% Included)',
+                                        style: black14BoldTextStyle,
                                       ),
                                     ],
                                   ),
@@ -470,24 +473,22 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                         ),
 
                         // Enter Value Textfield
-                        Theme(
-                          data: ThemeData(
-                            primaryColor: greyColor,
-                          ),
+                        Container(
+                          color: whiteColor,
                           child: TextField(
                             controller: valueController,
                             keyboardType: TextInputType.number,
-                            style: black16RegularTextStyle,
+                            style: black16BoldTextStyle,
                             decoration: InputDecoration(
-                              labelText: 'Value',
-                              labelStyle: black16RegularTextStyle,
+                              labelText: 'Enter Value',
+                              labelStyle: black16BoldTextStyle,
                               suffix: Text(
-                                'USD',
-                                style: black16RegularTextStyle,
+                                'INR',
+                                style: black16BoldTextStyle,
                               ),
                               border: OutlineInputBorder(
                                 borderSide:
-                                    BorderSide(color: greyColor, width: 0.7),
+                                    BorderSide(color: Colors.transparent),
                               ),
                             ),
                             onChanged: (value) {
@@ -504,24 +505,22 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                         height20Space,
 
                         // Amount Textfield
-                        Theme(
-                          data: ThemeData(
-                            primaryColor: greyColor,
-                          ),
+                        Container(
+                          color: whiteColor,
                           child: TextField(
                             controller: amountController,
                             keyboardType: TextInputType.number,
-                            style: black16RegularTextStyle,
+                            style: black16BoldTextStyle,
                             decoration: InputDecoration(
-                              labelText: 'Amout',
-                              labelStyle: black16RegularTextStyle,
+                              labelText: 'Weight Comes Here',
+                              labelStyle: black16BoldTextStyle,
                               suffix: Text(
-                                'BTC',
-                                style: black16RegularTextStyle,
+                                'GRAM',
+                                style: black16BoldTextStyle,
                               ),
                               border: OutlineInputBorder(
                                 borderSide:
-                                    BorderSide(color: greyColor, width: 0.7),
+                                    BorderSide(color: Colors.transparent),
                               ),
                             ),
                           ),
@@ -549,7 +548,11 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                             ),
                             child: Text(
                               'Buy'.toUpperCase(),
-                              style: white16MediumTextStyle,
+                              style: TextStyle(
+                                color: scaffoldBgColor,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold
+                              ),
                             ),
                           ),
                         ),
@@ -584,7 +587,7 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                   Container(
                     padding: EdgeInsets.all(fixPadding * 2.0),
                     decoration: BoxDecoration(
-                      color: whiteColor,
+                      color: scaffoldBgColor,
                       borderRadius:
                           BorderRadius.vertical(top: Radius.circular(10.0)),
                     ),
@@ -598,13 +601,15 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                           child: Text(
                             'Sell 24 KT GOLD BY WEIGHT',
                             style: black16BoldTextStyle,
+                            'Buy 24 KT GOLD By Weight',
+                            style: primaryColor18BoldTextStyle,
                           ),
                         ),
                         height20Space,
                         Container(
                           width: double.infinity,
-                          height: 0.7,
-                          color: greyColor.withOpacity(0.4),
+                          height: 0.9,
+                          color: primaryColor,
                         ),
 
                         Padding(
@@ -620,13 +625,14 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(7.0),
-                                  border: Border.all(
-                                    width: 0.8,
-                                    color: greyColor.withOpacity(0.5),
-                                  ),
+                                  color: whiteColor,
+                                  // border: Border.all(
+                                  //   width: 0.8,
+                                  //   color: greyColor.withOpacity(0.5),
+                                  // ),
                                 ),
                                 child: Image.asset(
-                                  'assets/crypto_icon/btc.png',
+                                  'assets/crypto_icon/gold_ingots.png',
                                   width: 36.0,
                                   height: 36.0,
                                   fit: BoxFit.cover,
@@ -638,8 +644,8 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Current BTC Sell Price',
-                                    style: black14RegularTextStyle,
+                                    'Current 24 KT GOLD Buy Price',
+                                    style: grey14BoldTextStyle,
                                   ),
                                   height5Space,
                                   Row(
@@ -648,18 +654,18 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Text(
-                                        '\$39,914',
+                                        'INR 4,714.40',
                                         style: black18SemiBoldTextStyle,
                                       ),
                                       widthSpace,
-                                      Icon(
-                                        Icons.arrow_drop_up,
-                                        size: 26.0,
-                                        color: primaryColor,
-                                      ),
+                                      // Icon(
+                                      //   Icons.arrow_drop_up,
+                                      //   size: 26.0,
+                                      //   color: primaryColor,
+                                      // ),
                                       Text(
-                                        '4.65%',
-                                        style: primaryColor16MediumTextStyle,
+                                        '(GST 3% Included)',
+                                        style: black14BoldTextStyle,
                                       ),
                                     ],
                                   ),
@@ -670,24 +676,24 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                         ),
 
                         // Enter Value Textfield
-                        Theme(
-                          data: ThemeData(
-                            primaryColor: greyColor,
-                          ),
+                        Container(
+                          color: whiteColor,
                           child: TextField(
                             controller: sellValueController,
                             keyboardType: TextInputType.number,
-                            style: black16RegularTextStyle,
+                            style: black16BoldTextStyle,
                             decoration: InputDecoration(
                               labelText: 'ENTER WEIGHT',
                               labelStyle: black16RegularTextStyle,
+                              labelText: 'Enter Weight',
+                              labelStyle: black16BoldTextStyle,
                               suffix: Text(
-                                'USD',
-                                style: black16RegularTextStyle,
+                                'GRAM',
+                                style: black16BoldTextStyle,
                               ),
                               border: OutlineInputBorder(
                                 borderSide:
-                                    BorderSide(color: greyColor, width: 0.7),
+                                    BorderSide(color: Colors.transparent),
                               ),
                             ),
                             onChanged: (value) {
@@ -705,24 +711,22 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                         height20Space,
 
                         // Amount Textfield
-                        Theme(
-                          data: ThemeData(
-                            primaryColor: greyColor,
-                          ),
+                        Container(
+                          color: whiteColor,
                           child: TextField(
                             controller: sellAmountController,
                             keyboardType: TextInputType.number,
-                            style: black16RegularTextStyle,
+                            style: black16BoldTextStyle,
                             decoration: InputDecoration(
-                              labelText: 'Amout',
-                              labelStyle: black16RegularTextStyle,
+                              labelText: 'Amout Comes Here',
+                              labelStyle: black16BoldTextStyle,
                               suffix: Text(
-                                'BTC',
-                                style: black16RegularTextStyle,
+                                'INR',
+                                style: black16BoldTextStyle,
                               ),
                               border: OutlineInputBorder(
                                 borderSide:
-                                    BorderSide(color: greyColor, width: 0.7),
+                                    BorderSide(color: Colors.transparent),
                               ),
                             ),
                           ),
@@ -749,8 +753,12 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                               color: primaryColor,
                             ),
                             child: Text(
-                              'Sell'.toUpperCase(),
-                              style: white16MediumTextStyle,
+                              'buy'.toUpperCase(),
+                              style: TextStyle(
+                                color: scaffoldBgColor,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold
+                              ),
                             ),
                           ),
                         ),
