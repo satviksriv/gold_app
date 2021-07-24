@@ -135,6 +135,20 @@ class _ProfileState extends State<Profile> {
               child: profileItem(Icons.account_balance, 'Bank Details',
                   'This account is used to facilitate all your deposits and withdrawals'),
             ),
+            divider(),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.rightToLeft,
+                    child: BankDetails(),
+                  ),
+                );
+              },
+              child: profileItem(Icons.account_balance, 'Bank Details',
+                  'This account is used to facilitate all your deposits and withdrawals'),
+            ),
             heightSpace,
             InkWell(
               onTap: () {

@@ -18,6 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     Timer(
+        Duration(seconds: 3),
         Duration(seconds: 5),
         () => Navigator.push(
             context, MaterialPageRoute(builder: (context) => Login())));
@@ -52,26 +53,59 @@ class _SplashScreenState extends State<SplashScreen> {
                   height: 150.0,
                   fit: BoxFit.cover,
                 ),
+                height20Space,
+                height20Space,
                 Text(
-                  'BKS MyGold',
+                  'BKS MyGOLD',
+                  style: TextStyle(
+                      fontFamily: 'Jost',
+                      fontSize: 26,
+                      color: primaryColor,
+                      fontWeight: FontWeight.w700),
                 ),
+                heightSpace,
                 SizedBox(
-                  width: 40,
+                  width: 80,
                   child: Divider(
-                    thickness: 3,
+                    thickness: 1,
+                    color: primaryColor,
                   ),
                 ),
+                height20Space,
                 Text(
                   'BUY TODAY',
+                  style: TextStyle(
+                      fontFamily: 'Jost',
+                      fontSize: 25,
+                      color: primaryColor,
+                      fontWeight: FontWeight.w500),
                 ),
                 Text(
                   'SAVE FOR TOMMOWROW',
+                  style: TextStyle(
+                      fontFamily: 'Jost',
+                      fontSize: 25,
+                      color: primaryColor,
+                      fontWeight: FontWeight.w500),
+                ),
+                SizedBox(
+                  height: 200,
                 ),
                 Text(
                   'A VENTURE OF',
+                  style: TextStyle(
+                      fontFamily: 'Jost',
+                      fontSize: 25,
+                      color: primaryColor,
+                      fontWeight: FontWeight.w500),
                 ),
                 Text(
                   'B.K.SARAF PVT JEWELLERS',
+                  style: TextStyle(
+                      fontFamily: 'Jost',
+                      fontSize: 25,
+                      color: primaryColor,
+                      fontWeight: FontWeight.w500),
                 ),
               ],
             ),

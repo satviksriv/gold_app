@@ -284,7 +284,104 @@ class _PortfolioState extends State<Portfolio> {
       ),
     );
   }
-
+// myPortfolioItems() {
+//   return ColumnBuilder(
+//     itemCount: portfolioItem.length,
+//     itemBuilder: (context, index) {
+//       final item = portfolioItem[index];
+//       return Padding(
+//         padding: (index != portfolioItem.length - 1)
+//              EdgeInsets.fromLTRB(
+//                 fixPadding * 2.0, fixPadding * 2.0, fixPadding * 2.0, 0.0)
+//             : EdgeInsets.all(fixPadding * 2.0),
+//         child: InkWell(
+//           onTap: () {
+//             Navigator.push(
+//                 context,
+//                 PageTransition(
+//                     type: PageTransitionType.size,
+//                     alignment: Alignment.center,
+//                     child: CurrencyScreen()));
+//           },
+//           borderRadius: BorderRadius.circular(20.0),
+//           child: Container(
+//             padding: EdgeInsets.all(fixPadding),
+//             decoration: BoxDecoration(
+//               borderRadius: BorderRadius.circular(20.0),
+//               color: whiteColor,
+//               boxShadow: [
+//                 BoxShadow(
+//                   blurRadius: 4.0,
+//                   spreadRadius: 1.0,
+//                   color: blackColor.withOpacity(0.05),
+//                 ),
+//               ],
+//             ),
+//             child: Row(
+//               mainAxisAlignment: MainAxisAlignment.start,
+//               crossAxisAlignment: CrossAxisAlignment.center,
+//               children: [
+//                 Image.asset(
+//                   item['image'],
+//                   height: 50.0,
+//                   width: 50.0,
+//                   fit: BoxFit.cover,
+//                 ),
+//                 widthSpace,
+//                 Expanded(
+//                   child: Row(
+//                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                     crossAxisAlignment: CrossAxisAlignment.center,
+//                     children: [
+//                       Column(
+//                         mainAxisAlignment: MainAxisAlignment.center,
+//                         crossAxisAlignment: CrossAxisAlignment.start,
+//                         children: [
+//                           Text(
+//                             item['name'],
+//                             style: black14MediumTextStyle,
+//                           ),
+//                           Row(
+//                             mainAxisAlignment: MainAxisAlignment.start,
+//                             crossAxisAlignment: CrossAxisAlignment.center,
+//                             children: [
+//                               Text(
+//                                 '${item['coinTotal']} ${item['shortName']}',
+//                                 style: black12RegularTextStyle,
+//                               ),
+//                               widthSpace,
+//                               (item['status'] == 'up')
+//                                   ? Icon(
+//                                       Icons.arrow_drop_up,
+//                                       color: primaryColor,
+//                                     )
+//                                   : Icon(
+//                                       Icons.arrow_drop_down,
+//                                       color: redColor,
+//                                     ),
+//                               Text(
+//                                 item['change'],
+//                                 style: black12RegularTextStyle,
+//                               ),
+//                             ],
+//                           ),
+//                         ],
+//                       ),
+//                       Text(
+//                         item['value'],
+//                         style: black16MediumTextStyle,
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ),
+//       );
+//     },
+//   );
+// }
   // myPortfolioItems() {
   //   return ColumnBuilder(
   //     itemCount: portfolioItem.length,
