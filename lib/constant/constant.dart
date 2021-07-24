@@ -18,6 +18,13 @@ const SizedBox height5Space = const SizedBox(height: 5.0);
 const SizedBox height20Space = const SizedBox(height: 20.0);
 
 const SizedBox widthSpace = const SizedBox(width: 10.0);
+const SizedBox divider = const SizedBox(
+  width: double.infinity,
+  child: Divider(
+    thickness: 1,
+    color: primaryColor,
+  ),
+);
 
 const SizedBox width5Space = const SizedBox(width: 5.0);
 

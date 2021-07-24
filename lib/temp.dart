@@ -2,8 +2,6 @@
 //HOME Page
 
 import 'package:cryptox/constant/constant.dart';
-import 'package:cryptox/pages/currencyScreen/buy_gold.dart';
-import 'package:cryptox/pages/currencyScreen/sell_gold.dart';
 import 'package:cryptox/pages/screens.dart';
 import 'package:cryptox/widget/column_builder.dart';
 import 'package:flutter/cupertino.dart';
@@ -37,15 +35,22 @@ class _HomeState extends State<Home> {
 
   final popularCurrencyList = [
     {
-      'name': '24 KT GOLD',
-      'shortName': 'Buy Rate',
+      'name': 'Bitcoin',
+      'shortName': 'BTC',
       'image': 'assets/crypto_icon/gold_ingots.png',
       'value': '\$10,136.73',
       'status': 'up',
       'change': '4.72%'
     },
+    {
+      'name': 'Ethereum',
+      'shortName': 'ETH',
+      'image': 'assets/crypto_icon/gold_ingots.png',
+      'value': '\$185.65',
+      'status': 'up',
+      'change': '6.86%'
+    },
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,8 +60,7 @@ class _HomeState extends State<Home> {
         children: [
           userGreeting(),
           balanceContainer(),
-          buyGold(),
-          sellGold(),
+          popularCurrency(),
           height20Space,
           myPortfolio(),
           height20Space,
@@ -124,12 +128,12 @@ class _HomeState extends State<Home> {
                         child: Column(
                           children: <Widget>[
                             Icon(
-                              Icons.airplanemode_on,
+                              Icons.work,
                               size: 60,
                               color: primaryColor,
                             ),
                             Text(
-                              'By Value',
+                              'By Weight',
                               style: primaryColor16MediumTextStyle,
                             ),
                           ],
@@ -159,113 +163,38 @@ class _HomeState extends State<Home> {
   }
 
   referAfriend() {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(
-          fixPadding * 2.0, fixPadding * 2.0, fixPadding * 2.0, 0),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          color: whiteColor,
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 4.0,
-              spreadRadius: 1.0,
-              color: blackColor.withOpacity(0.05),
-            ),
-          ],
-        ),
+    return Container(
+      height: 200,
+      child: Padding(
+        padding: EdgeInsets.all(fixPadding * 2.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            InkWell(
-              // onTap: () {
-              //   Navigator.push(
-              //       context,
-              //       PageTransition(
-              //           type: PageTransitionType.size,
-              //           alignment: Alignment.bottomCenter,
-              //           child: TotalBalance()));
-              // },
-
-              //TODO : Push to refer a friend
-
-              borderRadius: BorderRadius.vertical(
-                top: Radius.circular(10.0),
-              ),
-              child: Container(
-                padding: EdgeInsets.all(fixPadding * 1.5),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(10.0),
-                  ),
-                  color: scaffoldBgColor.withOpacity(0.5),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 50.0,
-                          height: 50.0,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25.0),
-                            color: scaffoldBgColor,
-                          ),
-                          child: Icon(
-                            Icons.account_tree_sharp,
-                            color: primaryColor,
-                          ),
-                        ),
-                        widthSpace,
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Your Referal Code',
-                              style: black12RegularTextStyle,
-                            ),
-                            height5Space,
-                            Text(
-                              'BKS123',
-                              style: black16MediumTextStyle,
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      size: 16.0,
-                      color: primaryColor,
-                    ),
-                  ],
-                ),
-              ),
+          children: <Widget>[
+            Text(
+              'Refer A Friend',
+              style: primaryColor16MediumTextStyle,
             ),
-            InkWell(
-              borderRadius: BorderRadius.vertical(
-                bottom: Radius.circular(10.0),
-              ),
-              child: Container(
-                padding: EdgeInsets.all(fixPadding),
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.vertical(
-                    bottom: Radius.circular(10.0),
+            Expanded(
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        color: whiteColor,
+                        borderRadius: BorderRadius.circular(15.0),
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 4.0,
+                            spreadRadius: 1.0,
+                            color: blackColor.withOpacity(0.05),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                  color: whiteColor,
-                ),
-                child: Text(
-                  'refer a friend'.toUpperCase(),
-                  style: primaryColor16MediumTextStyle,
-                ),
+                ],
               ),
             ),
           ],
@@ -514,7 +443,7 @@ class _HomeState extends State<Home> {
     );
   }
 
-  buyGold() {
+  popularCurrency() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -535,118 +464,13 @@ class _HomeState extends State<Home> {
                       PageTransition(
                           type: PageTransitionType.size,
                           alignment: Alignment.center,
-                          child: BuyGold()));
+                          child: CurrencyScreen()));
                 },
                 borderRadius: BorderRadius.circular(20.0),
                 child: Container(
                   padding: EdgeInsets.all(fixPadding),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15.0),
-                    color: whiteColor,
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 4.0,
-                        spreadRadius: 1.0,
-                        color: blackColor.withOpacity(0.05),
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        item['image'],
-                        height: 50.0,
-                        width: 50.0,
-                        fit: BoxFit.cover,
-                      ),
-                      widthSpace,
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  item['name'],
-                                  style: black14MediumTextStyle,
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      item['shortName'],
-                                      style: black12RegularTextStyle,
-                                    ),
-                                    widthSpace,
-                                    (item['status'] == 'up')
-                                        ? Icon(
-                                            Icons.arrow_drop_up,
-                                            color: primaryColor,
-                                          )
-                                        : Icon(
-                                            Icons.arrow_drop_down,
-                                            color: redColor,
-                                          ),
-                                    Text(
-                                      item['change'],
-                                      style: black12RegularTextStyle,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            Text(
-                              item['value'],
-                              style: black16MediumTextStyle,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            );
-          },
-        ),
-      ],
-    );
-  }
-
-  sellGold() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ColumnBuilder(
-          itemCount: popularCurrencyList.length,
-          itemBuilder: (context, index) {
-            final item = popularCurrencyList[index];
-            return Padding(
-              padding: (index != popularCurrencyList.length - 1)
-                  ? EdgeInsets.fromLTRB(
-                      fixPadding * 2.0, fixPadding * 2.0, fixPadding * 2.0, 0.0)
-                  : EdgeInsets.all(fixPadding * 2.0),
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      PageTransition(
-                          type: PageTransitionType.size,
-                          alignment: Alignment.center,
-                          child: SellGold()));
-                },
-                borderRadius: BorderRadius.circular(20.0),
-                child: Container(
-                  padding: EdgeInsets.all(fixPadding),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15.0),
+                    borderRadius: BorderRadius.circular(20.0),
                     color: whiteColor,
                     boxShadow: [
                       BoxShadow(

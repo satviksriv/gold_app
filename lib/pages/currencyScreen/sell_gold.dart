@@ -3,14 +3,14 @@ import 'package:cryptox/pages/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
-class CurrencyScreen extends StatefulWidget {
-  const CurrencyScreen({Key key}) : super(key: key);
+class SellGold extends StatefulWidget {
+  const SellGold({Key key}) : super(key: key);
 
   @override
   _CurrencyScreenState createState() => _CurrencyScreenState();
 }
 
-class _CurrencyScreenState extends State<CurrencyScreen> {
+class _CurrencyScreenState extends State<SellGold> {
   bool watchlist = false;
   final valueController = TextEditingController();
   final amountController = TextEditingController();
@@ -100,7 +100,7 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                     ),
                     widthSpace,
                     Text(
-                      'BTC',
+                      'SELL 24 KT GOLD',
                       style: black16BoldTextStyle,
                     ),
                   ],
@@ -149,20 +149,13 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  height: 56.0,
-                  width: 56.0,
+                  height: 60.0,
+                  width: 60.0,
                   alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(7.0),
-                    border: Border.all(
-                      width: 0.8,
-                      color: greyColor.withOpacity(0.5),
-                    ),
-                  ),
                   child: Image.asset(
                     'assets/crypto_icon/btc.png',
-                    width: 36.0,
-                    height: 36.0,
+                    width: 60.0,
+                    height: 60.0,
                     fit: BoxFit.cover,
                   ),
                 ),
