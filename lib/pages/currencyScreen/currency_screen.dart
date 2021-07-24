@@ -396,8 +396,6 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                           width: width,
                           alignment: Alignment.center,
                           child: Text(
-                            'BUY 24 KT GOLD BY VALUE',
-                            style: black18BoldTextStyle,
                             'Buy 24 KT GOLD By Value',
                             style: primaryColor18BoldTextStyle,
                           ),
@@ -599,8 +597,6 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                           width: width,
                           alignment: Alignment.center,
                           child: Text(
-                            'Sell 24 KT GOLD BY WEIGHT',
-                            style: black16BoldTextStyle,
                             'Buy 24 KT GOLD By Weight',
                             style: primaryColor18BoldTextStyle,
                           ),
@@ -683,8 +679,6 @@ class _CurrencyScreenState extends State<CurrencyScreen> {
                             keyboardType: TextInputType.number,
                             style: black16BoldTextStyle,
                             decoration: InputDecoration(
-                              labelText: 'ENTER WEIGHT',
-                              labelStyle: black16RegularTextStyle,
                               labelText: 'Enter Weight',
                               labelStyle: black16BoldTextStyle,
                               suffix: Text(

@@ -148,11 +148,21 @@ class _LoginState extends State<Login> {
                 ),
                 height20Space,
                 SizedBox(
-                  height: 200,
+                  height: 20,
                 ),
-                Text(
-                  'Guest Login',
-                  style: red16BoldTextStyle,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push<void>(
+                      context,
+                      MaterialPageRoute<void>(
+                        builder: (BuildContext context) => GuestHome(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'Guest Login',
+                    style: red16BoldTextStyle,
+                  ),
                 ),
               ],
             ),
