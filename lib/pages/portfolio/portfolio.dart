@@ -53,17 +53,13 @@ class _PortfolioState extends State<Portfolio> {
         children: [
           portfolioValue(),
           currentBalance('Total Gold Saved In Plans', '10.60 GRAM',
-              'check plans', FontAwesomeIcons.calendarCheck),
-          currentBalance(
-            'Total Instant Gold Available',
-            '5.20 GRAM',
-            'sell gold',
-            FontAwesomeIcons.calendarCheck,
-          ), //TODO: change the icon
+              'check plans', FontAwesomeIcons.solidCalendarCheck),
+          currentBalance('Total Instant Gold Available', '5.20 GRAM',
+              'sell gold', FontAwesomeIcons.snowflake), 
           currentBalance('Total Referral Bonus', '1.58 GRAM', 'refer to friend',
-              FontAwesomeIcons.calendarCheck), //TODO: change the icon
+              FontAwesomeIcons.shareAlt), 
           currentBalance('Total Plan Bonus', '1.80 GRAM', 'enrol new plan',
-              FontAwesomeIcons.calendarCheck), //TODO: change the icon
+              FontAwesomeIcons.piggyBank), 
           // myPortfolioItems(),
         ],
       ),
@@ -220,7 +216,7 @@ class _PortfolioState extends State<Portfolio> {
                             color: scaffoldBgColor,
                           ),
                           child: Icon(
-                            icons, // TODO; claendar icon / snow icon / share icon / bank icon
+                            icons, 
                             color: primaryColor,
                             size: 30,
                           ),
