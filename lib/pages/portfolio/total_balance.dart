@@ -18,30 +18,34 @@ class _TotalBalanceState extends State<TotalBalance> {
     {
       'type': 'deposit',
       'status': 'success',
-      'amount': 'INR 4,586.00', // TODO: change to gram
-      'dateTime': 'May 10,2021 9:02:23 PM'
+      'amount': 'INR 4,586.00',
+      'dateTime': 'May 10,2021 9:02:23 PM',
+      'gram': '1.08 GRAM'
     },
     {
       'type': 'withdraw',
       'status': 'success',
-      'amount': 'INR 488.50', // TODO: change to gram
-      'dateTime': 'April 20,2021 7:02:23 PM'
+      'amount': 'INR 488.50',
+      'dateTime': 'April 20,2021 7:02:23 PM',
+      'gram': '0.10 GRAM'
     },
     {
       'type': 'deposit',
       'status': 'fail',
-      'amount': 'INR 488.50', // TODO: change to gram
-      'dateTime': 'April 10,2021 6:02:24 PM'
+      'amount': 'INR 488.50',
+      'dateTime': 'April 10,2021 6:02:24 PM',
+      'gram': '0.10 GRAM'
     },
     {
       'type': 'deposit',
       'status': 'success',
-      'amount': 'INR 4,396.00', // TODO: change to gram
-      'dateTime': 'March 10,2021 9:02:23 PM'
+      'amount': 'INR 4,396.00',
+      'dateTime': 'March 10,2021 9:02:23 PM',
+      'gram': '1.18 GRAM'
     }
   ];
 
-  transactionDetailDialogue(status, amount, dateTime) {
+  transactionDetailDialogue(status, gram, dateTime) {
     showDialog(
       context: context,
       barrierDismissible: true,
@@ -90,7 +94,7 @@ class _TotalBalanceState extends State<TotalBalance> {
                       height: 10,
                     ),
                     Text(
-                      amount, // TODO: Change to GRAM
+                      gram,
                       style: black18BoldTextStyle,
                     ),
                     height5Space,
@@ -322,7 +326,7 @@ class _TotalBalanceState extends State<TotalBalance> {
         final item = transactionDetailList[index];
         return InkWell(
           onTap: () => transactionDetailDialogue(
-              item['status'], item['amount'], item['dateTime']),
+              item['status'], item['gram'], item['dateTime']),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -364,15 +368,24 @@ class _TotalBalanceState extends State<TotalBalance> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              (item['type'] == 'deposit' &&
-                                      item['status'] == 'success')
-                                  ? 'GRAM SAVED' // TODO: amount not shown
-                                  : (item['type'] == 'deposit' &&
-                                          item['status'] == 'fail')
-                                      ? 'GRAM ON HOLD' // TODO: amount not shown
-                                      : "GRAM RELEASED", // TODO: amount not shown
-                              style: black16SemiBoldTextStyle,
+                            Row(
+                              children: [
+                                Text(
+                                  item['gram'],
+                                  style: black16SemiBoldTextStyle,
+                                ),
+                                width5Space,
+                                Text(
+                                  (item['type'] == 'deposit' &&
+                                          item['status'] == 'success')
+                                      ? 'SAVED'
+                                      : (item['type'] == 'deposit' &&
+                                              item['status'] == 'fail')
+                                          ? 'ON HOLD'
+                                          : "RELEASED",
+                                  style: black16SemiBoldTextStyle,
+                                ),
+                              ],
                             ),
                             height5Space,
                             Text(
@@ -447,7 +460,7 @@ class _TotalBalanceState extends State<TotalBalance> {
                       height: 13,
                     ),
                     Text(
-                      "3.80 GRAM", // TODO: Change to GRAM
+                      "3.80 GRAM",
                       style: black22BoldTextStyle,
                     ),
                     // heightSpace,
