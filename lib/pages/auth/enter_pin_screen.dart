@@ -51,7 +51,7 @@ class _EnterPinScreenState extends State<EnterPinScreen> {
                       ),
                     ),
                     Image.asset(
-                      'assets/auth-icon.png',
+                      'assets/Logo.png',
                       width: 100.0,
                       height: 100.0,
                       fit: BoxFit.cover,

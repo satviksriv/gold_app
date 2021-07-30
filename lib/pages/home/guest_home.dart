@@ -2,6 +2,7 @@ import 'package:cryptox/constant/constant.dart';
 import 'package:cryptox/pages/screens.dart';
 import 'package:cryptox/widget/column_builder.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../bottom_bar.dart';
 
@@ -201,7 +202,7 @@ class _GuestHomeState extends State<GuestHome> {
                     ),
                     child: InkWell(
                       child: Icon(
-                        Icons.video_call, // TODO: change this to youtube icon
+                        FontAwesomeIcons.youtube,
                         color: primaryColor,
                         size: 40,
                       ),
@@ -285,7 +286,8 @@ activityContainer() {
           style: white16BoldTextStyle,
         ),
         height20Space,
-        acitivites("Buy And Save", "Save gold for Long Term Benefits"),
+        acitivites("Buy And Save", "Save gold for Long Term Benefits",
+            FontAwesomeIcons.calendarCheck),
         height5Space,
         Divider(
           color: whiteColor,
@@ -294,7 +296,8 @@ activityContainer() {
           thickness: 1,
         ),
         height5Space,
-        acitivites("Buy Instant Gold", "Save gold for Short Term Benefits"),
+        acitivites("Buy Instant Gold", "Save gold for Short Term Benefits",
+            FontAwesomeIcons.snowflake),
         height5Space,
         Divider(
           color: whiteColor,
@@ -303,7 +306,8 @@ activityContainer() {
           thickness: 1,
         ),
         height5Space,
-        acitivites("Refer and Earn", "Save gold for referring your friends"),
+        acitivites("Refer and Earn", "Save gold for referring your friends",
+            FontAwesomeIcons.shareAlt),
         height5Space,
         Divider(
           color: whiteColor,
@@ -312,7 +316,8 @@ activityContainer() {
           thickness: 1,
         ),
         height5Space,
-        acitivites("Save Additional Bonus", "Save additonal bonus on plans"),
+        acitivites("Save Additional Bonus", "Save additonal bonus on plans",
+            FontAwesomeIcons.piggyBank),
         height5Space,
         // Text(
         //   '\$4,50,933',
@@ -368,7 +373,7 @@ activityContainer() {
   );
 }
 
-Container acitivites(String title, String detail) {
+Container acitivites(String title, String detail, IconData icon) {
   return Container(
     child: Row(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -383,10 +388,9 @@ Container acitivites(String title, String detail) {
             color: scaffoldBgColor,
           ),
           child: Icon(
-            Icons
-                .home, // TODO; claendar icon / snow icon / share icon / bank icon
+            icon,
             color: primaryColor,
-            size: 30,
+            size: 23,
           ),
         ),
         widthSpace,
