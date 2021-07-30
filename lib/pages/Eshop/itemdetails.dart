@@ -66,97 +66,99 @@ class _ItemdetailsState extends State<Itemdetails> {
           ),
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            color: whiteColor.withOpacity(0.5),
-            child: Center(
-              child: Image(
-                image: AssetImage('assets/crypto_icon/btc.png'),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              color: whiteColor.withOpacity(0.5),
+              child: Center(
+                child: Image(
+                  image: AssetImage('assets/crypto_icon/btc.png'),
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(fixPadding * 2),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Description',
-                  style: primaryColor18BoldTextStyle,
-                ),
-                heightSpace,
-                Text(
-                  'Metal Purity : 24KT (99.99%)',
-                  style: primaryColor16BoldTextStyle,
-                ),
-                Text(
-                  'Packaging : Tamperproof Packaging',
-                  style: primaryColor16BoldTextStyle,
-                ),
-                Text(
-                  'Weight : 1.0 gram',
-                  style: primaryColor16BoldTextStyle,
-                ),
-                heightSpace,
-                Text(
-                  'This item cannot be cancelled, returned or replaced once it has been ordered',
-                  style: primaryColor16MediumTextStyle,
-                ),
-                height20Space,
-                height20Space,
-                Text(
-                  'SKU Number',
-                  style: primaryColor18BoldTextStyle,
-                ),
-                Text(
-                  'BKS57656765',
-                  style: black16BoldTextStyle,
-                ),
-                height20Space,
-                Text(
-                  'CHARGES APPLIED',
-                  style: primaryColor18BoldTextStyle,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      'GST',
-                      style: black16BoldTextStyle,
-                    ),
-                    Text(
-                      'INR 3666',
-                      style: black16BoldTextStyle,
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  width: double.infinity,
-                  child: Divider(
-                    thickness: 1,
-                    color: blackColor,
+            Padding(
+              padding: const EdgeInsets.all(fixPadding * 2),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Description',
+                    style: primaryColor18BoldTextStyle,
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      'MINTING',
-                      style: black16BoldTextStyle,
+                  heightSpace,
+                  Text(
+                    'Metal Purity : 24KT (99.99%)',
+                    style: primaryColor16BoldTextStyle,
+                  ),
+                  Text(
+                    'Packaging : Tamperproof Packaging',
+                    style: primaryColor16BoldTextStyle,
+                  ),
+                  Text(
+                    'Weight : 1.0 gram',
+                    style: primaryColor16BoldTextStyle,
+                  ),
+                  heightSpace,
+                  Text(
+                    'This item cannot be cancelled, returned or replaced once it has been ordered',
+                    style: primaryColor16MediumTextStyle,
+                  ),
+                  height20Space,
+                  height20Space,
+                  Text(
+                    'SKU Number',
+                    style: primaryColor18BoldTextStyle,
+                  ),
+                  Text(
+                    'BKS57656765',
+                    style: black16BoldTextStyle,
+                  ),
+                  height20Space,
+                  Text(
+                    'CHARGES APPLIED',
+                    style: primaryColor18BoldTextStyle,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        'GST',
+                        style: black16BoldTextStyle,
+                      ),
+                      Text(
+                        'INR 3666',
+                        style: black16BoldTextStyle,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: double.infinity,
+                    child: Divider(
+                      thickness: 1,
+                      color: blackColor,
                     ),
-                    Text(
-                      'INR 3666',
-                      style: black16BoldTextStyle,
-                    ),
-                  ],
-                ),
-              ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        'MINTING',
+                        style: black16BoldTextStyle,
+                      ),
+                      Text(
+                        'INR 3666',
+                        style: black16BoldTextStyle,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
