@@ -1,4 +1,5 @@
 import 'package:cryptox/constant/constant.dart';
+import 'package:cryptox/pages/market/all_coins.dart';
 
 import 'package:cryptox/pages/screens.dart';
 import 'package:flutter/material.dart';

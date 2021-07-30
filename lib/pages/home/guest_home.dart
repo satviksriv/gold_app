@@ -201,7 +201,7 @@ class _GuestHomeState extends State<GuestHome> {
                     ),
                     child: InkWell(
                       child: Icon(
-                        Icons.video_call, //TODO: change this to youtube icon
+                        Icons.video_call, // TODO: change this to youtube icon
                         color: primaryColor,
                         size: 40,
                       ),
