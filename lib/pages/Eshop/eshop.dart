@@ -1,60 +1,44 @@
 import 'package:cryptox/constant/constant.dart';
-
 import 'package:cryptox/pages/screens.dart';
 import 'package:flutter/material.dart';
-import 'all_coins.dart';
 
-////TODO     market
-
-class Market extends StatefulWidget {
-  const Market({Key key}) : super(key: key);
+class Eshop extends StatefulWidget {
+  const Eshop({Key key}) : super(key: key);
 
   @override
-  _MarketState createState() => _MarketState();
+  _EshopState createState() => _EshopState();
 }
 
-class _MarketState extends State<Market> {
+class _EshopState extends State<Eshop> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 2,
       child: Scaffold(
         backgroundColor: scaffoldBgColor,
         appBar: AppBar(
           backgroundColor: whiteColor,
-          automaticallyImplyLeading: false,
           title: Text(
-            'Market is up 2.06% today',
+            '!Market is up 2.06% today',
             style: TextStyle(
               fontSize: 16.0,
               color: greenColor,
               fontWeight: FontWeight.bold,
             ),
           ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.search,
-                color: primaryColor,
-              ),
-            ),
-          ],
           bottom: TabBar(
             isScrollable: true,
             tabs: [
-              Tab(text: 'All'),
-              Tab(text: 'Running'),
-              Tab(text: 'Forfieted'),
-              Tab(text: 'Completed'),
+              Tab(
+                text: 'Gold Coins',
+              ),
+              Tab(text: 'Gold Ingots'),
             ],
           ),
         ),
         body: TabBarView(
           children: [
-            All(),
-            Running(),
-            Forfieted(),
+            Goldcoins(),
             Completed(),
           ],
         ),
