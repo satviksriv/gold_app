@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:cryptox/constant/constant.dart';
+import 'package:cryptox/pages/Eshop/eshop.dart';
 import 'package:cryptox/pages/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -70,7 +71,7 @@ class _BottomBarState extends State<BottomBar> {
                 ? Market()
                 : (currentIndex == 3)
                     ? Portfolio()
-                    : Profile(),
+                    : Eshop(),
         onWillPop: () async {
           bool backStatus = onWillPop();
           if (backStatus) {

@@ -1,6 +1,3 @@
-//Current Page in Temp :
-//HOME Page
-
 import 'package:cryptox/constant/constant.dart';
 import 'package:cryptox/pages/currencyScreen/buy_gold.dart';
 import 'package:cryptox/pages/currencyScreen/sell_gold.dart';
@@ -35,13 +32,24 @@ class _HomeState extends State<Home> {
     }
   ];
 
-  final popularCurrencyList = [
+  final buybutton = [
     {
       'name': '24 KT GOLD',
-      'shortName': 'Buy Rate',
+      'shortName': 'Buy Gold',
       'image': 'assets/crypto_icon/gold_ingots.png',
       'value': '\$10,136.73',
       'status': 'up',
+      'change': '4.72%'
+    },
+  ];
+
+  final sellbutton = [
+    {
+      'name': '24 KT GOLD',
+      'shortName': 'Sell Gold',
+      'image': 'assets/crypto_icon/gold_ingots.png',
+      'value': '\$10,136.73',
+      'status': 'down',
       'change': '4.72%'
     },
   ];
@@ -520,11 +528,11 @@ class _HomeState extends State<Home> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ColumnBuilder(
-          itemCount: popularCurrencyList.length,
+          itemCount: buybutton.length,
           itemBuilder: (context, index) {
-            final item = popularCurrencyList[index];
+            final item = buybutton[index];
             return Padding(
-              padding: (index != popularCurrencyList.length - 1)
+              padding: (index != buybutton.length - 1)
                   ? EdgeInsets.fromLTRB(
                       fixPadding * 2.0, fixPadding * 2.0, fixPadding * 2.0, 0.0)
                   : EdgeInsets.all(fixPadding * 2.0),
@@ -625,11 +633,11 @@ class _HomeState extends State<Home> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ColumnBuilder(
-          itemCount: popularCurrencyList.length,
+          itemCount: sellbutton.length,
           itemBuilder: (context, index) {
-            final item = popularCurrencyList[index];
+            final item = sellbutton[index];
             return Padding(
-              padding: (index != popularCurrencyList.length - 1)
+              padding: (index != sellbutton.length - 1)
                   ? EdgeInsets.fromLTRB(
                       fixPadding * 2.0, fixPadding * 2.0, fixPadding * 2.0, 0.0)
                   : EdgeInsets.all(fixPadding * 2.0),
