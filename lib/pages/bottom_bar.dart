@@ -5,6 +5,7 @@ import 'package:cryptox/pages/Eshop/eshop.dart';
 import 'package:cryptox/pages/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BottomBar extends StatefulWidget {
   final int index;
@@ -52,14 +53,12 @@ class _BottomBarState extends State<BottomBar> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              bottomBarItem('assets/icon/primary-color/home.png',
-                  'assets/icon/grey/home.png', 1),
-              bottomBarItem('assets/icon/primary-color/statistic.png',
-                  'assets/icon/grey/statistic.png', 2),
-              bottomBarItem('assets/icon/primary-color/portfolio.png',
-                  'assets/icon/grey/portfolio.png', 3),
-              bottomBarItem('assets/icon/primary-color/user.png',
-                  'assets/icon/grey/user.png', 4),
+              bottomBarItem(FontAwesomeIcons.home, FontAwesomeIcons.home, 1),
+              bottomBarItem(
+                  FontAwesomeIcons.piggyBank, FontAwesomeIcons.piggyBank, 2),
+              bottomBarItem(FontAwesomeIcons.balanceScaleLeft,
+                  FontAwesomeIcons.balanceScaleLeft, 3),
+              bottomBarItem(FontAwesomeIcons.store, FontAwesomeIcons.store, 4),
             ],
           ),
         ),
@@ -99,16 +98,27 @@ class _BottomBarState extends State<BottomBar> {
     }
   }
 
-  bottomBarItem(activeIconPath, nonActiveIconPath, index) {
+  bottomBarItem(IconData activeicon, IconData nonActiveIcon, index) {
     return InkWell(
       onTap: () => changeIndex(index),
       child: Padding(
         padding: const EdgeInsets.all(fixPadding * 0.6),
-        child: Image.asset(
-          (index == currentIndex) ? activeIconPath : nonActiveIconPath,
-          width: 24.0,
-          height: 24.0,
-        ),
+        // child: Image.asset(
+        //   (index == currentIndex) ? activeIconPath : nonActiveIconPath,
+        //   width: 24.0,
+        //   height: 24.0,
+        // ),
+        child: (index == currentIndex)
+            ? Icon(
+                activeicon,
+                color: primaryColor,
+                size: 30,
+              )
+            : Icon(
+                nonActiveIcon,
+                color: Colors.grey,
+                size: 30,
+              ),
       ),
     );
   }

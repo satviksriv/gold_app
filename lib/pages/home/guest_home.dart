@@ -3,7 +3,6 @@ import 'package:cryptox/pages/screens.dart';
 import 'package:cryptox/widget/column_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import '../bottom_bar.dart';
 
 class GuestHome extends StatefulWidget {
@@ -287,7 +286,7 @@ activityContainer() {
         ),
         height20Space,
         acitivites("Buy And Save", "Save gold for Long Term Benefits",
-            FontAwesomeIcons.calendarCheck),
+            FontAwesomeIcons.solidCalendarCheck),
         height5Space,
         Divider(
           color: whiteColor,
